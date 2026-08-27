@@ -237,6 +237,7 @@ UI Library는 버튼이나 입력창의 모양만 가져오는 도구가 아니�
 - GitHub Pages의 저장소 하위 경로에서 CSS와 JavaScript가 끊기지 않도록 빌드 시 저장소 이름을 `base` 경로로 전달했습니다.
 - 도시 상세 Route를 직접 열거나 새로고침할 때를 대비해 빌드 후 `index.html`을 `404.html`로 복사하도록 했습니다.
 - OpenWeather API 키는 `.env`에만 저장하고 GitHub에는 올리지 않았습니다. 배포 시에는 GitHub Secret의 `VITE_OPENWEATHER_API_KEY`를 빌드 환경으로 전달하도록 구성했습니다.
+- GitHub Actions Secret을 등록한 뒤 공개 배포 화면에서 `OpenWeather · Open-Meteo`가 표시되고 실제 날씨와 대기질 요청이 정상 처리되는 것을 확인했습니다.
 - GitHub Pages에서 메인 화면과 제주 상세 화면을 열고, 상세 주소에서 새로고침해도 같은 화면이 복구되는 것을 확인했습니다.
 
 ### 배포 구조를 이렇게 정한 이유
