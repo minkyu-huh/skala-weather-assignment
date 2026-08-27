@@ -2,12 +2,12 @@
 
 Vue 수업에서 배운 문법을 날씨 화면에 단계별로 적용하는 프로젝트입니다. 처음부터 완성된 앱을 한 번에 만들기보다 Mockup, Composition API, Component, Router, Pinia, Axios 순서로 같은 화면을 확장하면서 각 단계의 차이를 확인하려고 합니다.
 
-현재는 **8단계 품질 관리와 배포 준비**까지 작업했습니다. GitHub 저장소와 배포 주소는 제출 방식을 확인한 뒤 최종 입력할 예정입니다.
+현재는 **8단계 품질 관리와 GitHub Pages 배포**까지 완료했습니다. 저장소와 배포 주소에서 실제 화면을 확인했습니다.
 
 ## 제출 링크
 
 - GitHub 저장소: [minkyu-huh/skala-weather-assignment](https://github.com/minkyu-huh/skala-weather-assignment)
-- 배포 주소: GitHub Pages 배포 후 입력
+- 배포 주소: [생활 날씨 대시보드](https://minkyu-huh.github.io/skala-weather-assignment/)
 
 ## 실행 화면
 
@@ -41,7 +41,7 @@ Vue 수업에서 배운 문법을 날씨 화면에 단계별로 적용하는 프
 | 5 | Pinia Store | 완료 |
 | 6 | Axios와 실제 날씨 API | 완료 |
 | 7 | Element Plus와 최종 UI | 완료 |
-| 8 | 품질 관리와 GitHub Pages 배포 준비 | 진행 중 |
+| 8 | 품질 관리와 GitHub Pages 배포 | 완료 |
 
 ## 1단계: Weather Mockup
 
@@ -237,6 +237,7 @@ UI Library는 버튼이나 입력창의 모양만 가져오는 도구가 아니�
 - GitHub Pages의 저장소 하위 경로에서 CSS와 JavaScript가 끊기지 않도록 빌드 시 저장소 이름을 `base` 경로로 전달했습니다.
 - 도시 상세 Route를 직접 열거나 새로고침할 때를 대비해 빌드 후 `index.html`을 `404.html`로 복사하도록 했습니다.
 - OpenWeather API 키는 `.env`에만 저장하고 GitHub에는 올리지 않았습니다. 배포 시에는 GitHub Secret의 `VITE_OPENWEATHER_API_KEY`를 빌드 환경으로 전달하도록 구성했습니다.
+- GitHub Pages에서 메인 화면과 제주 상세 화면을 열고, 상세 주소에서 새로고침해도 같은 화면이 복구되는 것을 확인했습니다.
 
 ### 배포 구조를 이렇게 정한 이유
 
@@ -325,6 +326,10 @@ Open-Meteo는 `temperature_2m`, `weather_code`처럼 시간별 값을 각각의 
 ### GitHub Pages 하위 경로의 JavaScript가 실행되지 않은 문제
 
 GitHub Pages와 같은 `/skala-weather-assignment/` 경로로 빌드한 후 Preview를 열었더니 화면이 비어 있었습니다. HTML은 받았지만 JavaScript 주소를 요청했을 때 서버가 JavaScript 대신 HTML을 반환하고 있었습니다. 빌드 명령에만 `base` 값을 전달해 Preview 서버와 경로 설정이 달라진 것이 원인이었습니다. `vite.config.js`에서 `VITE_BASE_PATH`를 읽게 하고 빌드와 Preview에 같은 값을 적용했습니다. 수정 후 메인 화면의 스타일과 JavaScript가 정상적으로 불러와지고 도시 상세 Route도 표시되는 것을 확인했습니다.
+
+### GitHub Pages가 비활성화되어 첫 배포가 실패한 문제
+
+첫 Push 후 GitHub Actions의 Build Job은 실행됐지만 `Get Pages site failed` 오류로 중단되었습니다. Workflow 코드를 먼저 수정하려고 했지만 오류 문구를 확인하니 저장소의 GitHub Pages 자체가 비활성화된 상태였습니다. 저장소 Settings의 Pages Source를 `GitHub Actions`로 변경하고 같은 Workflow를 다시 실행했습니다. Build와 Deploy Job이 모두 성공한 뒤 배포 주소가 생성되었고, 공개 주소에서 메인 화면·제주 상세 화면·새로고침을 직접 확인했습니다.
 
 ## 실행 방법
 

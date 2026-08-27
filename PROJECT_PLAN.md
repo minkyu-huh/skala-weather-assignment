@@ -140,7 +140,8 @@ WeatherHomeView.vue / WeatherDetailView.vue
 - Vue DevTools를 개발 서버에서만 등록하여 배포 빌드에서 제외했다.
 - GitHub Actions에 ESLint, 빌드, GitHub Pages 배포 과정을 작성했다.
 - 상세 Route에서 새로고침해도 화면을 복구할 수 있게 빌드 후 `404.html`을 생성하도록 했다.
-- 실제 GitHub 저장소 업로드와 배포 주소 확인은 GitHub 로그인 후 진행한다.
+- GitHub 공개 저장소에 Push하고 GitHub Pages 배포를 완료했다.
+- 배포 메인 화면과 제주 상세 Route를 직접 열었고, 상세 주소 새로고침 후에도 내용이 유지되는 것을 확인했다.
 
 ## 7. 예상 컴포넌트 구조
 
@@ -220,7 +221,9 @@ src/
 - 제출에 GitHub 저장소 링크와 배포 링크가 필요할 것으로 판단해 GitHub Pages 자동 배포 Workflow를 추가했다.
 - 기존 빌드 명령의 `--mode development`를 제거하고 Vue DevTools를 개발 서버에서만 사용하도록 정리했다.
 - GitHub Pages 하위 경로와 History Route 새로고침을 고려해 저장소 이름 `base` 전달과 `404.html` 생성 과정을 추가했다.
-- GitHub 로그인 후 저장소를 생성하고, Actions 실행·배포 주소·상세 Route 새로고침을 실제로 확인하기로 했다.
+- `minkyu-huh/skala-weather-assignment` 공개 저장소를 생성하고 `main` Branch를 Push했다.
+- 첫 Actions 배포에서 GitHub Pages 비활성화 오류가 발생해 Pages Source를 GitHub Actions로 변경한 뒤 재실행했다.
+- Build와 Deploy Job의 성공, 배포 주소, 제주 상세 Route의 직접 접속과 새로고침을 실제로 확인했다.
 
 ### 2026-08-25
 
