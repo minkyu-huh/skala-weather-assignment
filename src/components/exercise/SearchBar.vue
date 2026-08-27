@@ -26,9 +26,6 @@ defineProps({
     >
       <template #prefix>🔍</template>
     </el-input>
-    <p>
-      검색 중인 도시: <strong>{{ currentQuery }}</strong>
-    </p>
     <p v-if="resultMessage" class="search-status" aria-live="polite">{{ resultMessage }}</p>
   </div>
 </template>

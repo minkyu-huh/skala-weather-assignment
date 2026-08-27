@@ -6,7 +6,7 @@ import UnitToggler from '@/components/exercise/UnitToggler.vue'
 <template>
   <div class="router-app">
     <header class="site-header">
-      <RouterLink class="brand" :to="{ name: 'WeatherHome' }">생활 날씨</RouterLink>
+      <RouterLink class="brand" :to="{ name: 'WeatherHome' }">오늘의 날씨</RouterLink>
       <nav aria-label="주요 메뉴">
         <RouterLink :to="{ name: 'WeatherHome' }">날씨 대시보드</RouterLink>
         <RouterLink :to="{ name: 'MyLocation' }">현재 위치</RouterLink>
