@@ -6,7 +6,7 @@ Vue 수업에서 배운 문법을 날씨 화면에 단계별로 적용하는 프
 
 ## 제출 링크
 
-- GitHub 저장소: GitHub 업로드 후 입력
+- GitHub 저장소: [minkyu-huh/skala-weather-assignment](https://github.com/minkyu-huh/skala-weather-assignment)
 - 배포 주소: GitHub Pages 배포 후 입력
 
 ## 실행 화면
